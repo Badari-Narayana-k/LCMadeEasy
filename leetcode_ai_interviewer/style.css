@@ -1,0 +1,128 @@
+#ai-container {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background-color: #343a40;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  resize: both;
+}
+
+#ai-header {
+  background-color: #212529;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+  cursor: move;
+}
+
+#toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#ai-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #2c2f33;
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-message, .user-message {
+  padding: 10px 14px;
+  margin: 6px 0;
+  border-radius: 16px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 90%;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards ease-out;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.ai-message {
+  background-color: #495057;
+  color: white;
+  align-self: flex-start;
+}
+
+.user-message {
+  background-color: #0d6efd;
+  color: white;
+  align-self: flex-end;
+}
+
+pre {
+  background-color: #1e1e1e;
+  padding: 10px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: monospace;
+  color: #f8f8f2;
+  margin-top: 5px;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: #198754;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#ai-input {
+  display: flex;
+  padding: 10px;
+  background-color: #212529;
+}
+
+#ai-input textarea {
+  flex: 1;
+  resize: none;
+  border: none;
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 13px;
+}
+
+#ai-input button {
+  margin-left: 6px;
+  padding: 6px 12px;
+  background-color: #198754;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#ai-input button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
